@@ -1,0 +1,32 @@
+--Create a candle store database
+
+CREATE TABLE candles (id INTEGER PRIMARY KEY, name TEXT, fragrance TEXT, price INTEGER, rating INTEGER);
+
+INSERT INTO candles VALUES
+(1, "Garden", "Floral", 18.99,2),
+(2, "Berries", "Sweet", 20.99, 4),
+(3, "Ice Cream", "Sweet", 19.99, 1),
+(4, "Sun Kissed", "Beachy", 20.99, 3),
+(5, "Coastal", "Beachy", 17.99, 4),
+(6, "Shaven", "Masculine", 21.99, 4),
+(7, "Gentlemen", "Masculine", 22.99, 5),
+(8, "Rose", "Floral", 17.99, 2),
+(9, "Pina Colada", "Sweet", 19.99, 4),
+(10, "Clean Linen", "Fresh", 19.99, 4),
+(11, "Castaway", "Beachy", 22.99, 3),
+(12, "Lavender", "Floral", 21.99, 5),
+(13, "Ocean Breeze", "Beachy", 17.99, 5),
+(14, "Pine", "Masculine", 20.99, 3),
+(15, "Rainfall", "Fresh", 18.99, 4);
+
+--Display database by price.
+SELECT * FROM candles ORDER BY price;
+
+--What is the average price of the candles?
+SELECT AVG(price) FROM candles;
+
+--Top 5 most popular candles?
+SELECT name, price, rating
+FROM candles
+order by rating desc
+limit 5;
