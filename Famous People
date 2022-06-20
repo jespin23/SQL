@@ -1,0 +1,33 @@
+/* Create table of a set of “famous people” and then made another table about movies they were in. Created a query to JOIN the tables. */
+
+CREATE TABLE movie_stars (id INTEGER PRIMARY KEY, name TEXT, birth_date TEXT, birth_country TEXT);
+
+INSERT INTO movie_stars (id, name, birth_date, birth_country) VALUES 
+(1, "Tom Hardy", "09-15-1977", "UK"),
+(2, "Paul Walker", "09-12-1973", "US"),
+(3, "Dwane 'The Rock' Johnson", "05-02-1972", "US"),
+(4, "Michael J. Fox", "06-09-1961", "CA"),
+(5, "Zac Efron", "10-18-1987", "US"),
+(6, "Daniel Radcliffe", "07-23-1983", "UK"),
+(7, "Johnny Depp", "06-09-1963", "US"),
+(8, "Leonardo Dicaprio", "11-11-1974", "US");
+
+CREATE TABLE movies (id INTEGER PRIMARY KEY, stars_id INTEGER, title TEXT, year INTEGER);
+
+INSERT INTO movies (stars_id, title, year) VALUES
+(4, "Back to the Future", 1985),
+(2, "The Fast and the Furious", 2001),
+(1, "Venom", 2018),
+(3, "Jumanji", 2015),
+(5, "Baywatch", 2017),
+(8, "The Wolf of Wall St", 2013),
+(7, "Pirates of the Carribean: The Curse of the Black Pearl", 2003),
+(6, "Harry Potter and the Sorcerer's Stone", 2001);
+
+
+/*JOIN movie_stars and movies table to show which movie stars were in the movies*/
+SELECT s.name, m.title, m.year
+FROM movie_stars AS s
+    JOIN movies AS m
+    ON s.id=m.stars_id
+ORDER BY s.id;
