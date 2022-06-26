@@ -1,0 +1,24 @@
+/* Project: App impersonator - Stock Tracker */
+
+
+/*Create table for stock tracker and insert data for currently owned stocks*/
+CREATE TABLE stocks (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, quantity INTEGER, price INTEGER, cost_basis INTEGER);
+    
+INSERT INTO stocks (name, quantity, price, cost_basis) VALUES 
+('Faceboook', 4, 195.00, 170.42),
+('Tesla', 10, 128.97, 700.78),
+('Apple', 8, 141.67, 64.55),
+('Boeing', 15, 142.00, 127.87),
+('Airbnb', 7, 103.72, 85.94);
+
+SELECT * FROM stocks;
+
+/*Updating table to reflect a change in amount of shares owned*/
+UPDATE stocks SET quantity=20 WHERE name='Apple';
+
+SELECT* FROM stocks;
+
+/*Deleting a record from the table after shares were sold*/
+DELETE FROM stocks WHERE name='Airbnb';
+
+SELECT * FROM stocks
