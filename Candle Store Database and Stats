@@ -1,3 +1,5 @@
+/*First dataset for a mock candle store and used SQL to answer some questions.*/
+
 --Create a candle store database
 
 CREATE TABLE candles (id INTEGER PRIMARY KEY, name TEXT, fragrance TEXT, price INTEGER, rating INTEGER);
